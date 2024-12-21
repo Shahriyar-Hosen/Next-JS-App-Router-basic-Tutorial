@@ -1,8 +1,12 @@
-import { NextPage } from "next";
+import { Metadata, NextPage } from "next";
 
 interface IProps {
   params: { id: string };
 }
+
+export const generateMetadata = ({ params }: IProps): Metadata => {
+  return { title: `Blog || ${params.id} || Hablu Programmer` };
+};
 
 const BlogPage: NextPage<IProps> = ({ params }) => {
   console.log("🚀 ~ BlogPage ~ props:", { id: params.id });
